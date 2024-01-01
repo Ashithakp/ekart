@@ -34,6 +34,21 @@ def dashboard(request):
 
 
 def seller_register(request):
+    # message = ''
+    # if request.method == 'POST':
+    #     fname = request.POST['fname']
+    #     lname = request.POST['lname']
+    #     gender = request.POST['gender']
+    #     city = request.POST['city']
+    #     country = request.POST['country']
+    #     companyName = request.POST['companyName']
+    #     bankName = request.POST['bankName']
+    #     bankBranch = request.POST['bankBranch']
+    #     accountNumber = request.POST['accountNumber']
+    #     IFSC = request.POST['IFSC']
+
+
+
     return render(request, 'customer/seller_register.html')
 
 
@@ -77,7 +92,7 @@ def customer_login(request):
         c_password = request.POST['password']
 
         new_customer = Customer.objects.filter(email = c_username, password = c_password)
-        # filter(name  from table = variable)
+        # filter(name from table/models = variable)
 
         if new_customer.exists():
             return redirect('customer:customer_home')
